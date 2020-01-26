@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <ul class="nav nav-tabs" *ngIf="tVIndex">
+                <li>
+                    <a [routerLink]="['/projectDetails']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}" data-toggle="tab" title="">
+                        <div style="display: inline-block;">
+                            <span [ngStyle]="{'color': cond1 ? 'blue' : '#111'}" class="glyphicon glyphicon-list-alt"
+                                aria-hidden="true"></span>
+                            <p [ngStyle]="{'color': cond1 ? 'blue' : '#111'}">Project Details</p>
+                        </div>
+                        <span [ngStyle]="{'color': cond1 ? 'blue' : '#111'}" class="glyphicon glyphicon-chevron-right"
+                            aria-hidden="true"></span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/projectSettings']" routerLinkActive="active" data-toggle="tab" title="">
+                        <div style="display: inline-block;">
+                            <span [ngStyle]="{'color': cond2 ? 'blue' : '#111'}" class="glyphicon glyphicon-equalizer"
+                                aria-hidden="true"></span>
+                            <p [ngStyle]="{'color': cond2 ? 'blue' : '#111'}">Project Settings</p>
+                        </div>
+                        <span [ngStyle]="{'color': cond2 ? 'blue' : '#111'}" class="glyphicon glyphicon-chevron-right"
+                            aria-hidden="true"></span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/deliveryDetails']" routerLinkActive="active" data-toggle="tab" title="">
+                        <div style="display: inline-block;">
+                            <span [ngStyle]="{'color': cond3 ? 'blue' : '#111'}" class="glyphicon glyphicon-plane"
+                                aria-hidden="true"></span>
+                            <p [ngStyle]="{'color': cond3 ? 'blue' : '#111'}">Delivery Details</p>
+                        </div>
+                        <span [ngStyle]="{'color': cond3 ? 'blue' : '#111'}" class="glyphicon glyphicon-chevron-right"
+                            aria-hidden="true"></span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/wizardResultSubmit']" routerLinkActive="active" data-toggle="tab" title="">
+                        <div style="display: inline-block;">
+                            <span [ngStyle]="{'color': cond4 ? 'blue' : '#111'}" class="glyphicon glyphicon-thumbs-up"
+                                aria-hidden="true"></span>
+                            <p [ngStyle]="{'color': cond4 ? 'blue' : '#111'}">Review and Submits</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-3 text-right" style="padding-top: 7%;">
+            <button class="btn btn-primary" *ngIf="tVIndex" [routerLink]="['/tableView']" routerLinkActive=""
+                [routerLinkActiveOptions]="{exact: true}" data-toggle="tab" title="">
+                To table view
+            </button>
+            <button class="btn btn-success col-sm-12" *ngIf="!tVIndex" (click)="addNewPro()" data-toggle="tab" title="">
+                Add new project ( home / first step )
+            </button>
+            <button class="btn btn-default col-sm-12" *ngIf="!tVIndex && cond4" [routerLink]="['/wizardResultSubmit']"
+                data-toggle="tab" title="" style="margin-top: 14px;">
+                PREVIOUS
+            </button>
+        </div>
+    </div>
+</div>

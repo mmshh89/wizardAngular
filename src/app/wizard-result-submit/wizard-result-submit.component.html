@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <h2>{{ title }}</h2><br>
+        <div class="col-xs-11 col-sm-12 col-md-12">
+            <div class="row">
+                <div class="col-sm-offset-1 col-sm-11 elem">
+                    <h3>Project Details</h3>
+                    <p><strong>Project Name:</strong> {{ wizardData.name }}</p>
+                    <p><strong>Phone Owner:</strong> {{ wizardData.owner }}</p>
+                    <p><strong>Phone Customer:</strong> {{ wizardData.customer }}</p>
+                    <p><strong>Phone Number:</strong> {{ wizardData.phone }}</p>
+                    <p><strong>Email:</strong> {{ wizardData.email }}</p>
+                    <p><strong>Phone Website:</strong> {{ wizardData.webSite }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-offset-1 col-sm-11 elem">
+                    <h3>Project Settings</h3>
+                    <p><strong>Language:</strong> {{ wizardData.language }}</p>
+                    <p><strong>TimeZone:</strong> {{ wizardData.time }}</p>
+                    <p>
+                        <strong>communication Type(s):</strong>
+                        <span *ngIf="wizardData.communicationEmail"> Email</span>
+                        <span *ngIf="wizardData.communicationSms"> <span *ngIf="wizardData.communicationEmail"> -</span> SMS</span>
+                        <span *ngIf="wizardData.communicationPhone"> <span *ngIf="wizardData.communicationEmail || wizardData.communicationSms"> -</span> Phone</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-offset-1 col-sm-11 elem" style="border-bottom: 1px solid #ddd; margin-bottom: 20px;">
+                    <h3>Delivery Address</h3>
+                    <p><strong>Address 1:</strong> {{ wizardData.address1 }}</p>
+                    <p><strong>Address 2:</strong> {{ wizardData.address2 }}</p>
+                    <p><strong>Post Code:</strong> {{ wizardData.postCode }}</p>
+                    <p><strong>City:</strong> {{ wizardData.city }}</p>
+                    <p><strong>State:</strong> {{ wizardData.state }}</p>
+                    <p><strong>Country:</strong> {{ wizardData.country }}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-2">
+                        <button routerLink="/delivery-details" class="btn btn-default">PREVIOUS</button>
+                    </div>
+                    <div class="col-sm-offset-6 col-sm-2">
+                        <button type="submit" class="btn btn-success" (click)="submit()">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

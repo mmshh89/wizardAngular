@@ -1,0 +1,44 @@
+<h2>table-view works!</h2>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Customer</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Website</th>
+        <th scope="col">Language</th>
+        <th scope="col">Time</th>
+        <th scope="col">Communication</th>
+        <th scope="col">Country</th>
+        <th scope="col">City</th>
+        <th scope="col">State</th>
+        <th scope="col">PostCode</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projectsSource; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ project.name }}</td>
+        <td>{{ project.owner }}</td>
+        <td>{{ project.customer }}</td>
+        <td>{{ project.email }}</td>
+        <td>{{ project.phone }}</td>
+        <td>{{ project.webSite }}</td>
+        <td>{{ project.language }}</td>
+        <td>{{ project.time }}</td>
+        <td>
+          <span style="margin: 2px;" class="label label-success" *ngIf="project.communicationEmail">Email</span>
+          <span style="margin: 2px;" class="label label-info" *ngIf="project.communicationSms">SMS</span>
+          <span style="margin: 2px;" class="label label-warning" *ngIf="project.communicationPhone">Phone</span>
+        </td>
+        <td>{{ project.country }}</td>
+        <td>{{ project.city }}</td>
+        <td>{{ project.state }}</td>
+        <td>{{ project.postCode }}</td>
+      </tr>
+    </tbody>
+  </table>
